@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use Carbon\Carbon;
 use DateTime;
 
 class recordseeder extends Seeder
@@ -20,7 +20,7 @@ class recordseeder extends Seeder
             'user_id'=>'1',
             'category_id'=>'1',
             'weight'=>'60',
-            'date'=>'0605',
+            'date'=>Carbon::create(2024, 5, 30),
             'created_at'=>new DateTime(),
             'updated_at'=>new DateTime(),
             ]);

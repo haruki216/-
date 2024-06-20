@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->text('memo');
             $table->integer('weight');
+            $table->date('date')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

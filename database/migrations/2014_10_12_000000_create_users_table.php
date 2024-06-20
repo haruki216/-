@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('birthday');
             $table->integer('phone_number');
             $table->integer('height');
-            $table->integer('integer');
+            $table->integer('age');
             $table->string('gender');
             $table->timestamps();
             $table->softDeletes();
