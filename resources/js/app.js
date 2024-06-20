@@ -1,2 +1,7 @@
 import './bootstrap';
-import './record';
+import './calendar';
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start();
