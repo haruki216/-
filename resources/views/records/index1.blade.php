@@ -133,3 +133,69 @@ for($day = 1; $day <= $day_count; $day++, $youbi++){
     </div>
 </body>
 </html>
+  <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+        <title>体重管理</title>
+   <form action='/calories/store' method="post">
+             @csrf
+             
+            <dt>日付</dt>
+                <dd><input placeholder='0601'  name='data' id='date'></dd>
+            <dt>体重（kg）</dt>
+                <dd><input type='number' class="box" name='weight'id='weight' ></dd>
+             <button type="submit" class="btn btn-primary">Add Weight</button>
+        </form>
+        
+        
+         <canvas id="people_weight_chart" width="500" height="500"></canvas>
+         <script>
+           window.onload = function () {
+        let context = document.querySelector("#people_weight_chart").getContext('2d')
+        new Chart(context, {
+          type: 'line',
+          data: {
+            labels:  {!! json_encode($weights->pluck('date')) !!},
+            datasets: [{
+              label: "体重記録",
+              data:  {!! json_encode($weights->pluck('date')) !!},
+               backgroundColor: ['#4169e1']
+            }],
+          },
+          options: {
+            responsive: false
+          }
+        })
+      }
+            </script>
+             
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('lineChart').getContext('2d');
+            const chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: {!! json_encode($weights->pluck('date')) !!},
+                    datasets: [{
+                        label: 'Weight (kg)',
+                        data: {!! json_encode($weights->pluck('weight')) !!},
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>

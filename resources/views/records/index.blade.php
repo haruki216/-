@@ -4,15 +4,14 @@
     <link rel="stylesheet"  href="/index.css">
  </head>
  <body>
-\<nav>
-<ul class="gnav-navi-1">
-<li><a href="#">TOP<br>トップ</a></li>
-<li><a href="#">SERVICE<br>サービスについて</a></li>
-<li><a href="#">INFORMATION<br>お知らせ</a></li>
-<li><a href="#">BLOG<br>ブログ</a></li>
-<li><a href="#">CONTACT<br>お問合せ</a></li>
-</ul>
-</nav>
+    <nav>
+        <ul class="gnav-navi-1">
+        <li><a href="/">記録</a></li>
+        <li><a href="/timer">タイマー</a></li>
+        <li><a href="/calories">体重記録</a></li>
+        <li><a href="#">チャット</a></li>
+        </ul>
+    </nav>
 
    
 @extends('layouts.app1')

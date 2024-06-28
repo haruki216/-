@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RecordController;
-
+use App\Http\Controllers\CalculationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +18,11 @@ Route::middleware('auth')->group(function () {
 Route::get('/', [RecordController::class, 'index'])->name('records.index');
 Route::post('/memo/{date}', [RecordController::class, 'memo'])->name('records.memo');
 Route::get('/memo/{date}', [recordController::class, 'memo'])->name('records.memo');
+Route::get('/timer',function(){return view('records.timer');});
+Route::get('/calories', [CalculationController::class, 'index'])->name('records.calories');
+Route::post('/calories', [CalculationController::class, 'store'])->name('records.store');
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
