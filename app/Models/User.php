@@ -67,5 +67,10 @@ public function replies()
     return $this->hasMany(Record::class);  
 }
 
+  public function calculations()   
+{
+    return $this->hasMany(Calculation::class);  
+}
+
 
 }

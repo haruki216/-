@@ -11,25 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('records', function (Blueprint $table) {
+        Schema::create('calculations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
             $table->foreignId('user_id')->constrained();
-            $table->text('memo');
+            $table->date('date');
             $table->integer('weight');
-            $table->date('date')->unique();
-            $table->string('category')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
-     
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('records');
+        Schema::dropIfExists('calculation');
     }
 };

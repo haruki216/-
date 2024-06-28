@@ -58,11 +58,16 @@ class RecordController extends Controller
         $memo = Record::firstOrNew(['date' => $date]);
         if ($request->isMethod('post')) {
             $memo->memo = $request->input('memo');
+            $memo->category = $request->input('category');
             $memo->save();
             return redirect()->route('records.index'); // Ensure the route name is correct
         }
         return view('records.memo', compact('date', 'memo'));
     }
+    
+   
+    
+    
 }
 
 
