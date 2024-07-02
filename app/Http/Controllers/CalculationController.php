@@ -18,7 +18,7 @@ class CalculationController extends Controller
     {
         $request->validate([
             'date' => 'required|date',
-            'weight' => 'required|integer',
+            'weight' => 'required|numeric',
         ]);
         $weight = Calculation::firstOrNew(['date' => $request->input('date')]);
         $weight->weight = $request->input('weight');

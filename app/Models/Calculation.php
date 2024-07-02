@@ -11,7 +11,7 @@ class Calculation extends Model
      protected $attributes = [
         
         'user_id'=>1,
-        'weight'=>70,
+        'weight'=>75.3,
         'date'=>0401,
     ];
 

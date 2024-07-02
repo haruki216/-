@@ -15,7 +15,8 @@ use App\Http\Controllers\CalculationController;
 |
 */
 Route::middleware('auth')->group(function () {
-Route::get('/', [RecordController::class, 'index'])->name('records.index');
+Route::get('/',function(){return view('records.top');});
+Route::get('/calender', [RecordController::class, 'index'])->name('records.index');
 Route::post('/memo/{date}', [RecordController::class, 'memo'])->name('records.memo');
 Route::get('/memo/{date}', [recordController::class, 'memo'])->name('records.memo');
 Route::get('/timer',function(){return view('records.timer');});
