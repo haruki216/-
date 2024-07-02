@@ -6,7 +6,7 @@
  <body>
     <nav>
         <ul class="gnav-navi-1">
-        <li><a href="/">記録</a></li>
+        <li><a href="/calender">記録</a></li>
         <li><a href="/timer">タイマー</a></li>
         <li><a href="/calories">体重記録</a></li>
         <li><a href="#">チャット</a></li>

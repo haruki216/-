@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->date('date');
-            $table->integer('weight');
+            $table->double('weight',4,1);
             $table->timestamps();
         });
     }
