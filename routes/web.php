@@ -14,6 +14,13 @@ use App\Http\Controllers\CalculationController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::middleware('auth')->group(function () {
 Route::get('/',function(){return view('records.top');});
 Route::get('/calender', [RecordController::class, 'index'])->name('records.index');
@@ -25,9 +32,7 @@ Route::post('/calories', [CalculationController::class, 'store'])->name('records
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
