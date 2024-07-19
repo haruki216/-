@@ -31,9 +31,12 @@ Route::get('/timer',function(){return view('records.timer');});
 Route::get('/calories', [CalculationController::class, 'index'])->name('records.calories');
 Route::post('/calories', [CalculationController::class, 'store'])->name('records.store');
 Route::get('/post',[PostController::class, 'index']);
+Route::get('/post/posts/search',[PostController::class,'search']);
 Route::get('/post/posts/create',[PostController::class,'create']);
 Route::get('/post/posts/{post}',[PostController::class,'show']);
 Route::post('/posts', [PostController::class, 'store']);
+Route::delete('/post/posts/{post}',[PostController::class,'delete']);
+// Route::get('/post/posts/search',[PostController::class,'search']);
 });
 
 
