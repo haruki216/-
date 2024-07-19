@@ -6,7 +6,7 @@
         <title>post</title>
     </head>
     <body>
-         <form action="/posts" method="POST">
+         <form action="/posts"  enctype="multipart/form-data" method="POST">
             @csrf
        <h1 class="title">
           <h2>title</h2>
@@ -17,6 +17,8 @@
              <textarea name="cotent" placeholder="今日も1日お疲れさまでした。"></textarea>
                
            </div>
+           <input id="image" type="file" name="image">
+           
            <input type="submit" value="store"/>
        </form>
        

@@ -12,6 +12,7 @@
        <div class="content">
            <div class="content_post">
                <h3>本文</h3>
+                <img src="{{ Storage::url($post->image)}}" width="100px">
                <p>{{$post->cotent}}</p>
            </div>
        </div>
