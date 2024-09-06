@@ -9,6 +9,7 @@ class PostController extends Controller
 {
     //
     public function index(Post $post){
+        $posts = Post::with('user')->get();
         return view("chat.post")->with(["posts"=>$post->getByLimit()]);
     }
     public function create(){
@@ -27,7 +28,7 @@ class PostController extends Controller
       
 
     $image = $request->file('image');
-    $path = $image->store('public/images');
+    $path = $image->store('public');
     $post->image = $path;
         $post->save();
     return redirect('/post/posts/' . $post->id);
@@ -44,7 +45,7 @@ class PostController extends Controller
          if (!empty($keyword)){
             $posts = Post::
                 where('cotent','LIKE',"%{$keyword}%")->get();
-            //   $posts = Post::where("cotent", "LIKE", "%{keyword}%")->get();
+           
             }
         else {
             $posts = Post::get();
